@@ -1,6 +1,7 @@
 import User from "../models/userModel.js"
 import bcrypt from "bcrypt"
  export const createUser = async (req,res) =>{
+    console.log(req.body)
     try {
         const saltRound = 10;
         const{name,email,password,address,role,phoneNumber}= req.body;

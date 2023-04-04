@@ -13,6 +13,14 @@ app.use(express.json())
 //connect to database
 connectDb();
 
+app.get('/',()=>{
+    console.log('hyyyyyyy')
+})
+
+
+//routes
+app.use('/user',authRoutes)
+
 // port
 const   port =  process.env.PORT ||8000
 app.listen(port,()=>{console.log(`app is running at ${port}`)});
