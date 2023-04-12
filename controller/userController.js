@@ -21,10 +21,7 @@ import bcrypt from "bcrypt"
         const{email,password}=req.body;
         const existingUser = await User.findOne({ email: email });
         if (!existingUser) {
-          return res.status(404).send({ message: "User not found" });
-
-
-          
+          return res.status(404).send({ message: "User not found" });   
         }
     
         const matchedPassword = await bcrypt.compare(
