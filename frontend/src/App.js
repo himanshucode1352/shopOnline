@@ -1,19 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import Layout from '../src/components/Layout'
+import HomePage from './screens/homePage';
+import { BrowserRouter, Route,  Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Layout>
-           <h1>
-       heyyyyyyyyyyyyyyy
-        </h1>
-       
-        
-      </Layout>
-     
-    </div>
+ <BrowserRouter>
+ <Routes>
+ <Route exact path='/' element={< HomePage />}></Route> 
+ </Routes>
+ </BrowserRouter>
   );
 }
 
