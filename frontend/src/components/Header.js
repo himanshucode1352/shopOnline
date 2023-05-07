@@ -9,16 +9,20 @@ const Header = () => {
       <span className="navbar-toggler-icon" />
     </button>
     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <Link to= "/" className="navbar-brand" href="#">Hidden brand</Link >
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+      <Link to= "/" className="navbar-brand" href="#">Home</Link >
+      <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
         <li className="nav-item">
           <Link to= "/" className="nav-link active" aria-current="page" href="#">Home</Link >
         </li>
         <li className="nav-item">
-          <Link to= "/" className="nav-link" href="#">Link</Link >
+          <Link to= "/" className="nav-link" href="#">Register</Link >
         </li>
         <li className="nav-item">
-          <Link to= "/" className="nav-link disabled">Disabled</Link >
+          <Link to= "/" className="nav-link ">Login</Link >
+          </li>
+          <li className="nav-item">
+          <Link to= "/" className="nav-link ">Cart(0)</Link >
+       
         </li>
       </ul>
      
