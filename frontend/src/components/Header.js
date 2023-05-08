@@ -15,10 +15,10 @@ const Header = () => {
           <Link to= "/" className="nav-link active" aria-current="page" href="#">Home</Link >
         </li>
         <li className="nav-item">
-          <Link to= "/" className="nav-link" href="#">Register</Link >
+          <Link to= "/register" className="nav-link" >Register</Link >
         </li>
         <li className="nav-item">
-          <Link to= "/" className="nav-link ">Login</Link >
+          <Link to= "/login" className="nav-link ">Login</Link >
           </li>
           <li className="nav-item">
           <Link to= "/" className="nav-link ">Cart(0)</Link >
