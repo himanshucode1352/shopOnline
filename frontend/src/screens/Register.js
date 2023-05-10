@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
+import { toast } from "react-toastify";
 
 const Register = () => {
+  const [name,setName]= useState()
+  const [email,setEmail]= useState()
+  const [address,setAddress]= useState()
+  const [number,setNumber]= useState()
+  const [password,setPassword]= useState()
+  const handleSubmit= ()=>{
+console.log('hyyyyyyyyyyy')
+toast.success()
+  }
   return (
     <>
       <Layout>
@@ -14,6 +24,7 @@ const Register = () => {
                 className="form-control"
                 id="name"
                 aria-describedby="emailHelp"
+                onChange={(e)=>setName(e.target.value)}
                 placeholder="Enter your Name"
                 required
               /> 
@@ -22,7 +33,7 @@ const Register = () => {
               <input 
                 type="email"
                 className="form-control"
-              
+                onChange={(e)=>setEmail(e.target.value)}
                 placeholder="Enter your Email"
                 required
               />
@@ -31,7 +42,8 @@ const Register = () => {
             <div className="mb-3">
               <input
                 type="text"
-                className="form-control"
+                className="form-control" 
+                onChange={(e)=>setAddress(e.target.value)}
                 placeholder="Enter your Address"
                 required
               />
@@ -40,6 +52,7 @@ const Register = () => {
               <input
                 type="number"
                 className="form-control"
+                onChange={(e)=>setNumber(e.target.value)}
                 placeholder="Enter your Phone number"
                 required
               />
@@ -50,21 +63,13 @@ const Register = () => {
                   type="password"
                   className="form-control"
                   id="exampleInputPassword1"
+                  onChange={(e)=>setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required
                 />
               </div>
-            <div className="mb-3 form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="exampleCheck1"
-              />
-              <label className="form-check-label" htmlFor="exampleCheck1">
-                Check me out
-              </label>
-            </div>
-            <button type="submit" className="btn btn-primary">
+           
+            <button type="click" className="btn btn-primary" onClick={handleSubmit}>
               Submit
             </button>
           </form>
