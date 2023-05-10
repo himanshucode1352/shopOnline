@@ -16,7 +16,7 @@ const Register = () => {
                 aria-describedby="emailHelp"
                 placeholder="Enter your Name"
                 required
-              />
+              /> 
             </div>
             <div className="mb-3">
               <input 
