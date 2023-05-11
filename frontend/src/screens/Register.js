@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { toast } from "react-toastify";
+import { requstHandler } from "../components/helper";
 
 const Register = () => {
   const [name,setName]= useState()
@@ -8,8 +9,23 @@ const Register = () => {
   const [address,setAddress]= useState()
   const [number,setNumber]= useState()
   const [password,setPassword]= useState()
-  const handleSubmit= ()=>{
-console.log('hyyyyyyyyyyy')
+  const handleSubmit= async(e)=>{
+    e.preventDefault()
+    console.log('object')
+try {
+  let data={
+    name:name,
+    email:email,
+    password:password,
+    address:address,
+    number:number
+  }
+ const result= await requstHandler('user/create','post',data)
+ console.log('result',result)
+} catch (error) {
+  console.log(error)
+  
+}
 toast.success()
   }
   return (
@@ -69,7 +85,7 @@ toast.success()
                 />
               </div>
            
-            <button type="click" className="btn btn-primary" onClick={handleSubmit}>
+            <button type="click" className="btn btn-primary" onClick={(e)=>handleSubmit(e)}>
               Submit
             </button>
           </form>

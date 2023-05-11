@@ -8,6 +8,7 @@ const requstHandler = async (
   auth = "",
   isFile = false
 ) => {
+  console.log('2323424',BASE_URL)
   return new Promise((resolve, reject) => {
     let headers = { "Content-Type": "application/json" };
     if (isFile) {
