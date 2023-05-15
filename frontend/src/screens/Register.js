@@ -18,15 +18,16 @@ try {
     email:email,
     password:password,
     address:address,
-    number:number
+    phoneNumber:number
   }
  const result= await requstHandler('user/create','post',data)
  console.log('result',result)
+ toast.success(result.msg)
 } catch (error) {
-  console.log(error)
-  
+  console.log(error.message)
+  toast.error(error.message)
 }
-toast.success()
+
   }
   return (
     <>
