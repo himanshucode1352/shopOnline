@@ -4,5 +4,7 @@ import validateToken from "../middlleware/verifyToken.js";
 const Router = express.Router()
 
 Router.post('/create',createUser)
-Router.post('/login',validateToken,login)
+Router.post('/login',login)
+
+// Router.post('/login',validateToken,login)
 export default Router
