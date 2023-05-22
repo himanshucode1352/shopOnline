@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { toast } from "react-toastify";
 import { requstHandler } from "../components/helper";
+import { useAuth } from "../contextApi/auth";
+import { redirect } from "react-router-dom";
 
 const Login = () => {
   const [email,setEmail]= useState()
   const [password,setPassword]= useState()
+  const[auth,setAuth]=useAuth()
   const handleSubmit= async(e)=>{
     e.preventDefault()
     console.log('object')
@@ -17,7 +20,10 @@ try {
   }
  const result= await requstHandler('user/login','post',data)
  console.log('result',result)
+ setAuth(result.data)
  toast.success(result.msg)
+ redirect('/dashboard')
+
 } catch (error) {
   console.log(error.message)
   toast.error(error.message)

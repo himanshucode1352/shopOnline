@@ -1,11 +1,25 @@
 import { createContext, useContext, useEffect, useState } from "react"
 const AuthContext = createContext()
-
 const AuthProvider =({children})=>{
+
+
     const [auth,setAuth]= useState({
         user:'',
         token:''
     })
+
+    useEffect(() => {
+        const data = localStorage.getItem("auth");
+        if (data) {
+          const parseData = JSON.parse(data);
+          setAuth({
+            ...auth,
+            user: parseData.user,
+            token: parseData.token,
+          });
+        }
+        //eslint-disable-next-line
+      }, []);
     return(
 
 
@@ -15,7 +29,7 @@ const AuthProvider =({children})=>{
     )
 }
 
-const useAuth = useContext(AuthContext)
+const useAuth = () => useContext(AuthContext);
 
 
 export {useAuth,AuthProvider}

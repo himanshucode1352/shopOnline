@@ -9,6 +9,7 @@ import Contact from './screens/Contact';
 import Policy from './screens/Policy';
 import Login from './screens/Login';
 import { BrowserRouter, Route,  Routes } from 'react-router-dom';
+import DashBoard from './screens/DashBoard';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
  <Route exact path='/contact' element={< Contact />}></Route> 
  <Route exact path='/login' element={< Login />}></Route> 
  <Route exact path='/policy' element={< Policy />}></Route> 
+ <Route exact path='/dashboard' element={< DashBoard />}></Route> 
  </Routes>
  </BrowserRouter>
   );
