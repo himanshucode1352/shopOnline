@@ -23,10 +23,12 @@ try {
  console.log('result',result)
  setAuth(result)
  toast.success(result.msg)
-   navigate('/dashboard')
+  setTimeout(()=>{
+    navigate('/dashboard')
+  },3000) 
 
 } catch (error) {
-  console.log(error.message)
+  console.log(error.mesage)
   toast.error(error.message)
 }
 
